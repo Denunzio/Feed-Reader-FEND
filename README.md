@@ -2,7 +2,7 @@ Feed Reader FEND
 This project is part of the Front-End Web Developer Nanodegree Program 2018. You are given a web-based application that reads RSS feeds, the purpose is to write tests using the Jasmine framework.
 
 # How to install and run
-Clone this repository into a directory that you have access to: git clone 
+Clone this repository into a directory that you have access to: git clone https://github.com/Denunzio/Feed-Reader-FEND.git
 * Open the provided index.html in your browser.
 * Verify that the following tests complete:
     * RSS Feeds
