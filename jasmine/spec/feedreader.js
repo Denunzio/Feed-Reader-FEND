@@ -111,7 +111,9 @@ $(function() {
 
     /* DONE: Write a new test suite named "New Feed Selection" */
     describe('New Feed Selection', function()  {
-        let firstUrl, lastUrl;
+        
+        
+        let firstFeed, lastFeed;
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
@@ -121,17 +123,15 @@ $(function() {
          */
         beforeEach(function(done)  {
             loadFeed(0, function()  {
-                firstUrl = $('.feed').html();
-            loadFeed(1, function()  {
-                lastUrl = $('.feed').html();
+                firstFeed = $('.feed').html();
+                loadFeed(1,done);
+            });
+        });
+        
+        it('new feed content', function(done)  {
+                lastFeed = $('.feed').html();
+                expect(firstFeed).toBe(lastFeed);
                 done();
             });
         });
     });
-        
-        it('new feed content', function()  {
-            expect(firstUrl).not.toEqual(lastUrl);
-            done();
-        });
-    });
-}());
