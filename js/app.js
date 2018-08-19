@@ -46,7 +46,7 @@ function init() {
 
      $.ajax({
        type: "POST",
-       //url: 'https://rsstojson.udacity.com/parseFeed',
+       url: 'https://rsstojson.udacity.com/parseFeed',
        data: JSON.stringify({url: feedUrl}),
        contentType:"application/json",
        success: function (result, status){
