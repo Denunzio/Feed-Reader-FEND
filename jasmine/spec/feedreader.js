@@ -37,7 +37,7 @@ $(function() {
         it('valid url defined on every entry', function()  {
             for(let feed of allFeeds)  {
                 expect(feed.url).toBeDefined();
-                expect(feed.url).not.toBeNull();
+                expect(feed.url.length).toBeGreaterThan(0);
                 expect(feed.length).not.toBe(0);
             }
         });
@@ -63,8 +63,6 @@ $(function() {
          * hiding/showing of the menu element.
          */
         it('element is hidden by default', function() {
-
-            let body = document.querySelector('body');
             expect($('body').hasClass('menu-hidden')).toBe(true);
         });
 
@@ -102,16 +100,14 @@ $(function() {
         });
         it('contain at least a single .entry element within the .feed container', function(done) {
             let entryElement = $('.feed .entry');
-            expect(entryElement).not.toBeUndefined();
             expect(entryElement).toBeDefined();
-            expect(entryElement).not.toBeNull();
+            expect(entryElement.length).toBeGreaterThan(0);
             done();
         });
     });
 
     /* DONE: Write a new test suite named "New Feed Selection" */
     describe('New Feed Selection', function()  {
-        
         
         let firstFeed, lastFeed;
         /* TODO: Write a test that ensures when a new feed is loaded
@@ -130,7 +126,7 @@ $(function() {
         
         it('new feed content', function(done)  {
                 lastFeed = $('.feed').html();
-                expect(firstFeed).toBe(lastFeed);
+                expect(firstFeed).not.toEqual(lastFeed);
                 done();
             });
         });
